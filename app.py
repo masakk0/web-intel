@@ -263,7 +263,11 @@ def history(page=1):
 # ---------------------- Main ----------------------
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()
+        try:
+            db.create_all()  # Ensure all tables are created before running the app
+            print("Database initialized successfully.")
+        except Exception as e:
+            print(f"Error creating DB tables: {e}")
         # Delete all history records from the Query table
         Query.query.delete()
         db.session.commit()
