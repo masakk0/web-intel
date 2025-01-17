@@ -12,6 +12,7 @@ numpy>=1.21.0,<1.25.0
 matplotlib>=3.5.0,<4.0
 plotly>=5.0.0
 scipy>=1.8.0
+scikit-learn>=1.0.0
 tiktoken==0.3.3
 openai==0.27.0
 flask-wtf==0.15.1
