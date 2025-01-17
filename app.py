@@ -200,7 +200,7 @@ def create_context(question, df, max_len=5000, top_n=5):
     context = "\n\n###\n\n".join(df.sort_values('distances').head(top_n)['text'].tolist())
     return context[:max_len]
 
-def answer_question(df, question, max_len=5000, max_tokens=500):
+def answer_question(df, question, max_len=5000, max_tokens=700):
     context = create_context(question, df, max_len=max_len)
     try:
         response = openai.ChatCompletion.create(
