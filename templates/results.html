@@ -1,0 +1,25 @@
+<!-- results.html -->
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Analysis Results</h1>
+    </div>
+
+    <div class="bg-white shadow sm:rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <div class="prose max-w-none">
+                {{ answer }}
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-8 text-center">
+        <a href="{{ url_for('index') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            ← Back to Search
+        </a>
+    </div>
+</div>
+{% endblock %}
