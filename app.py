@@ -22,9 +22,13 @@ from bs4 import BeautifulSoup
 # Load environment variables
 load_dotenv()
 
+# Ensure the instance folder exists
+if not os.path.exists(app.instance_path):
+    os.makedirs(app.instance_path)
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:////opt/render/project/src/db/site.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///' + os.path.join(app.instance_path, 'site.db'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize database
