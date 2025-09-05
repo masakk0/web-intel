@@ -21,4 +21,5 @@ SQLAlchemy==1.4.23
 deepagents
 langgraph-cli[inmem]
 tavily-python
+tavily
 
